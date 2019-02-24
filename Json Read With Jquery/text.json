@@ -1,0 +1,19 @@
+{
+	"mainpage": [{
+			"description": "Merhaba bu yazı berkarat.com tarafından yazılmıştır. İletişim için aşağıdaki maile mesaj gönderebilirsiniz. Teşekkürler ",
+			"btnsendmessage": "Mesaj Gönder"
+		},
+		{
+			"description": "Hello this post was written by berkarat.com. You can send a message to the contact below. Thanks ",
+			"btnsendmessage": "Send Message"
+		},
+		{
+			"description": "Hola este post fue escrito por berkarat.com. Puede enviar un mensaje al contacto de abajo. gracias",
+			"btnsendmessage": "Enviar mensaje"
+		},
+		{
+			"description": "مرحبا هذه المشاركة كتبت بواسطة berkarat.com. يمكنك إرسال رسالة إلى جهة الاتصال أدناه. شكر",
+			"btnsendmessage": "ارسل رسالة"
+		}
+	]
+}

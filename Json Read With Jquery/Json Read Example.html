@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>READ JSON </title>
+    <!-- berkarat.com -->
+
+    <style>
+        body {
+            background-color: lightslategrey;
+        }
+
+        #lngbtn {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 250%;
+            border: none;
+            border-radius: 45;
+            height: 90px;
+            width: 90px;
+            margin-top: 1px;
+            margin-bottom: auto;
+            margin-left: 5px;
+            margin-right: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: transparent;
+            outline: none;
+        }
+
+
+        #lngbtn:active {
+
+            font-size: 95px;
+            box-shadow: 0 5px lightgreen;
+            transform: translateY(10px);
+        }
+
+        #lngbtn:focus {
+            transform: translateY(15px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="margin-top:80px;">
+        <nav class="navbar navbar-collapse ">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <button id="lngbtn" style="background: url('image/try.svg')  ;  background-size: cover;"
+                        onclick="setlang(0)"></button>
+                    <button id="lngbtn"
+                        style="background-image: url('image/united-states.svg'); background-size: cover;"
+                        onclick="setlang(1)"></button>
+                    <button id="lngbtn" style="background-image: url('image/spain.svg'); background-size: cover; "
+                        onclick="setlang(2)"></button>
+                    <button id="lngbtn" style="background-image: url('image/saudi-arabia.svg'); background-size: cover;"
+                        onclick="setlang(3)"></button>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <label id="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quos a unde dolor
+            exercitationem magni fuga officiis, voluptatibus nisi, ex alias totam repellendus, molestiae libero commodi
+            nam ad dignissimos dolorum?</label>
+
+
+    </div>
+    <hr>
+    <div class="container"> <input type="text" id="inpttext"> <button class="btn btn-primary" id="btnsendmessage"> Mesaj
+            Gönder </button> </div>
+</body>
+<script>
+
+    var json = '{ "mainpage": [' +
+        '{   "description": "Merhaba bu yazı berkarat.com tarafından yazılmıştır. İletişim için aşağıdaki maile mesaj gönderebilirsiniz. Teşekkürler ", "btnsendmessage": "Mesaj Gönder"    },' +
+        '{   "description": "Hello this post was written by berkarat.com. You can send a message to the contact below. Thanks ", "btnsendmessage": "Send Message"   },' +
+        '{   "description": "Hola este post fue escrito por berkarat.com. Puede enviar un mensaje al contacto de abajo. gracias", "btnsendmessage": "Enviar mensaje"   },' +
+        '{   "description": "مرحبا هذه المشاركة كتبت بواسطة berkarat.com. يمكنك إرسال رسالة إلى جهة الاتصال أدناه. شكر",  "btnsendmessage": "ارسل رسالة"   }  ]}';
+    // var obj = JSON.parse($.getJSON({'url': "./text.json", 'async': false}).responseText);
+    var obj = jQuery.parseJSON(json);
+    function setlang(id) {
+        selected_language = id;
+        $("#description").text(obj.mainpage[id].description);
+        $("#btnsendmessage").text(obj.mainpage[id].btnsendmessage);
+    }
+</script>
+
+</html>
